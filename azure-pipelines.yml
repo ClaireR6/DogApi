@@ -1,0 +1,38 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+
+trigger:
+  branches:
+    include:
+      - Dev  # Run CI on dev branch
+      - master # Run CI on master branch
+
+pr:
+  branches:
+    include:
+      - Dev
+      - master
+
+pool:
+  vmImage: ubuntu-latest
+
+
+steps:
+  - task: UseRubyVersion@0
+    inputs:
+      versionSpec: '>= 3.3.7'
+      addToPath: true
+
+  - script: |
+      export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
+      gem install bundler --user-install
+      bundle install --path vendor/bundle
+    displayName: 'Install Dependencies'
+
+  - script: |
+      export PATH="$HOME/.local/share/.gem/ruby/3.3.0/bin:$PATH"  # Ensure bundler is found
+      bundle exec rspec --tag ~wip
+    displayName: 'Run Tests'

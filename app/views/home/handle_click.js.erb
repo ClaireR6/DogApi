@@ -1,0 +1,17 @@
+<% if @image_url %>
+    document.getElementById("dog_image").classList.remove("d-none");
+    document.getElementById("dog_image").src = "<%= j @image_url %>";
+<% end %>
+
+<% if flash[:error] %>
+  var errorDiv = document.getElementById("flash_error");
+  if (errorDiv) {
+    errorDiv.classList.remove("d-none");
+    errorDiv.innerHTML = "<%= j flash[:error] %>";
+  }
+<% else %>
+  var errorDiv = document.getElementById("flash_error");
+  if (errorDiv) {
+    errorDiv.classList.add("d-none");
+  }
+<% end %>

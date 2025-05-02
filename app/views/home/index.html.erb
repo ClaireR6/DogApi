@@ -1,0 +1,11 @@
+<h1>Dog Api Tool</h1>
+
+<div id="flash_error" class="alert alert-danger d-none">
+    <%= flash[:error] %>
+</div>
+
+<%= button_to "Get a dog", handle_click_path, method: :get, remote: true, id: "get-dog-button", class: "btn btn-outline-dark btn-md" %>
+<br>
+<div id="dog_image_container">
+  <img id="dog_image" src="" alt="Dog image" class="d-none" style="max-width: 250px; height: auto; margin-top: 20px;" />
+</div> 
