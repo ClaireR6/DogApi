@@ -4,8 +4,43 @@
     <%= flash[:error] %>
 </div>
 
-<%= button_to "Get a dog", handle_click_path, method: :get, remote: true, id: "get-dog-button", class: "btn btn-outline-dark btn-md" %>
-<br>
-<div id="dog_image_container">
-  <img id="dog_image" src="" alt="Dog image" class="d-none" style="max-width: 250px; height: auto; margin-top: 20px;" />
-</div> 
+
+<div class="container">
+    <div class="input-group mb-3">
+      <select class="custom-select btn btn-secondary r-2" id="urlSelect">
+        <option selected disabled>Select Call</option>
+        <option value="https://dog.ceo/api/breeds/image/random" data-path="handle_random_dog_image">Random Dog</option>
+        <option value="https://dog.ceo/api/breeds/list/all" data-path="handle_breeds">Breeds</option>
+      </select>
+      <input type="text" disabled class="form-control" id="input" placeholder="" aria-label="User input">
+      <%= form_tag "#", id: "submit-form", method: :get, remote: true do %>
+        <%= submit_tag "Submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const select = document.getElementById('urlSelect');
+      const input = document.getElementById('input');
+      const form = document.getElementById('submit-form');
+      //const submitBtn = document.getElementById('submit-btn');
+
+      select.addEventListener('change', () => {
+        const selectedUrl = select.value;
+        const selectedPath = select.options[select.selectedIndex].getAttribute('data-path');
+        input.value = selectedUrl;
+        //submitBtn.setAttribute('action', selectedPath);
+        form.setAttribute('action', selectedPath);
+      });
+    });
+  </script>
+
+  <div id="output-container" class="container mt-4 bg-dark" style="color: white; padding: 20px; border-radius: 5px;">
+    <h4>Response</h2>
+    <div id="output" class="d-none p-3">
+    </div>
+  </div>
+</div>
+
+

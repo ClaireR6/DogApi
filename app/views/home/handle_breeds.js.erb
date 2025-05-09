@@ -1,0 +1,30 @@
+<% if @breeds %>
+    breedList = document.createElement("ul");
+    breedList.id = "breed_list";
+    breedList.classList.add("list-group");
+    output = document.getElementById("output")
+    output.classList.remove("d-none");
+    output.innerHTML = ""; // Clear previous content
+
+    breedsjson = <%= raw @breeds.to_json %>;
+    breedsjson.forEach(breed => {
+        li = document.createElement("li");
+        li.textContent = breed;
+        breedList.appendChild(li);
+    });
+
+    output.appendChild(breedList);
+<% end %>
+
+<% if flash[:error] %>
+  var errorDiv = document.getElementById("flash_error");
+  if (errorDiv) {
+    errorDiv.classList.remove("d-none");
+    errorDiv.innerHTML = "<%= j flash[:error] %>";
+  }
+<% else %>
+  var errorDiv = document.getElementById("flash_error");
+  if (errorDiv) {
+    errorDiv.classList.add("d-none");
+  }
+<% end %>

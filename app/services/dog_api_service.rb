@@ -19,4 +19,29 @@ class DogApiService
       raise "Error calling dog API: #{parsed_response[:message]}"
     end
   end
+
+  def self.get_breed_data
+    uri = URI("https://dog.ceo/api/breeds/list/all")
+    response = Net::HTTP.get(uri)
+    parsed_response = JSON.parse(response, symbolize_names: true)
+    if parsed_response[:status] == "success"
+      parsed_response[:message]
+    else
+      raise "Error calling dog API: #{parsed_response[:message]}"
+    end
+  end
+
+  def self.get_breed_array
+    breeds = get_breed_data
+
+    # Flatten the data into a single array
+    breeds_array = breeds.flat_map do |breed, subbreeds|
+      if subbreeds.any?
+        subbreeds.map { |subbreed| "#{subbreed} #{breed}" }
+      else
+        breed.to_s
+      end
+    end
+    breeds_array
+  end
 end

@@ -1488,3 +1488,76 @@ Completed 200 OK in 3095ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cac
 
 
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dogs'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dogs'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dogs'*/[0m
+Started GET "/" for ::1 at 2025-05-02 12:14:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dogs'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 10.0ms | GC: 0.0ms)
+  Rendered home/_header.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 406.7ms | GC: 0.2ms)
+Completed 200 OK in 10136ms (Views: 925.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/assets/application-67d625f1.js" for ::1 at 2025-05-02 12:14:57 -0500
+Started GET "/assets/turbo.min-fae85750.js" for ::1 at 2025-05-02 12:14:57 -0500
+Started GET "/assets/stimulus.min-4b1e420e.js" for ::1 at 2025-05-02 12:14:57 -0500
+Started GET "/assets/controllers/hello_controller-708796bd.js" for ::1 at 2025-05-02 12:14:57 -0500
+Started GET "/assets/controllers/index-ee64e1f1.js" for ::1 at 2025-05-02 12:14:58 -0500
+Started GET "/assets/application-8b441ae0.css" for ::1 at 2025-05-02 12:14:58 -0500
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for ::1 at 2025-05-02 12:14:59 -0500
+Started GET "/assets/controllers/application-3affb389.js" for ::1 at 2025-05-02 12:14:59 -0500
+Started GET "/handle_click" for ::1 at 2025-05-02 12:15:00 -0500
+Started GET "/assets/turbo.min-5dd5a71a.js.map" for 127.0.0.1 at 2025-05-02 12:15:00 -0500
+Started GET "/assets/stimulus.min-2395e199.js.map" for 127.0.0.1 at 2025-05-02 12:15:00 -0500
+Processing by HomeController#handle_click as HTML
+FORMAT: text/html
+Completed 406 Not Acceptable in 5675ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat)
+Caused by: ActionController::UnknownFormat (ActionController::UnknownFormat)
+
+Information for: ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/home_controller.rb:16:in `rescue in handle_click'
+app/controllers/home_controller.rb:5:in `handle_click'
+
+Information for cause: ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/home_controller.rb:9:in `handle_click'
+Started GET "/favicon.ico" for ::1 at 2025-05-02 12:15:09 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/handle_click" for ::1 at 2025-05-02 12:15:16 -0500
+Processing by HomeController#handle_click as JS
+FORMAT: text/javascript
+  Rendering home/handle_click.js.erb
+  Rendered home/handle_click.js.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 3187ms (Views: 40.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dogs'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dogs'*/[0m
+Started GET "/" for ::1 at 2025-05-09 10:23:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Dogs'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered home/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 168.3ms | GC: 0.0ms)
+Completed 200 OK in 6125ms (Views: 249.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/application-56082c78.css" for ::1 at 2025-05-09 10:24:04 -0500
+Started GET "/assets/turbo.min-5dd5a71a.js.map" for 127.0.0.1 at 2025-05-09 10:24:04 -0500
+Started GET "/assets/stimulus.min-2395e199.js.map" for 127.0.0.1 at 2025-05-09 10:24:04 -0500
+Started GET "/assets/bootstrap" for ::1 at 2025-05-09 10:24:04 -0500
+Started GET "/handle_random_dog_image?commit=Submit" for ::1 at 2025-05-09 10:24:15 -0500
+Processing by HomeController#handle_random_dog_image as JS
+  Parameters: {"commit"=>"Submit"}

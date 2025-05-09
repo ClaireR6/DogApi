@@ -1,0 +1,29 @@
+<% if @image_url %>
+    output = document.getElementById("output")
+    output.classList.remove("d-none");
+    output.innerHTML = ""; // Clear previous content
+  // This code will be executed when the page loads
+    dogImage = document.createElement('img');
+    dogImage.id = 'dog_image';
+    dogImage.src = "<%= j @image_url %>"; // Set to actual image URL later
+    dogImage.alt = 'Dog image'
+    dogImage.style.maxWidth = '250px';
+    dogImage.style.height = 'auto';
+    dogImage.style.marginTop = '20px';
+
+    output.appendChild(dogImage);
+
+<% end %>
+
+<% if flash[:error] %>
+  var errorDiv = document.getElementById("flash_error");
+  if (errorDiv) {
+    errorDiv.classList.remove("d-none");
+    errorDiv.innerHTML = "<%= j flash[:error] %>";
+  }
+<% else %>
+  var errorDiv = document.getElementById("flash_error");
+  if (errorDiv) {
+    errorDiv.classList.add("d-none");
+  }
+<% end %>
